@@ -20,7 +20,7 @@ public class SpringConfig {
 	@Value("${jdbc.password}")
 	private String password;
 	@Bean(destroyMethod = "close")
-	private DataSource dataSource() {
+	public DataSource dataSource() {
 		DruidDataSource druidDataSource  = new DruidDataSource();
 		druidDataSource.setDriverClassName(driverClass);
 		druidDataSource.setUrl(jdbcUrl);
