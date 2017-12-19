@@ -1,4 +1,4 @@
-package com.wizard.sdms.config.mybatis;
+package com.wizard.sdms.config;
 
 import javax.sql.DataSource;
 

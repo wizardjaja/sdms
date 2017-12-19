@@ -1,4 +1,4 @@
-package com.wizard.sdms.config.spring;
+package com.wizard.sdms.config;
 
 import javax.sql.DataSource;
 
