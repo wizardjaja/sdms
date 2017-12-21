@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wizard.sdms.baseinfo.mapper.IClassMapper">
+
+	<resultMap id="ClassResultMap" type="Class" >
+		<id property="classId" column="classId" />
+		<result property="className" column="className"/>
+	</resultMap>
+	
+	<insert id="insert" parameterType="Class">
+		<selectKey keyProperty="classId" resultType="int" order="BEFORE">
+			select SQ_Class.nextval from dual
+		</selectKey>
+		INSERT INTO Class(classId,className) 
+		VALUES(#{classId},#{className})
+	</insert>
+	
+	<update id="update" parameterType="Class">
+		update Class set className=#{className}
+		where classId=#{classId} 
+	</update>
+	
+	<delete id="delete" parameterType="Class">
+		delete from Class where classId=#{classId} 
+	</delete>
+	
+	<select id="select" parameterType="String" resultMap="ClassResultMap">
+		select * from Class where classId=#{classId}
+	</select>
+	
+	
+	<select id="selectListByAll" resultMap="ClassResultMap">
+		select * from Class
+	</select>
+	
+	<select id="selectListByAllWithPage" resultMap="ClassResultMap">
+		select * from Class
+	</select>
+	
+	
+	<select id="selectCountByAll" resultType="int">
+		select count(*) from Class
+	</select>
+	
+	
+	
+
+
+</mapper>
+
