@@ -18,7 +18,7 @@ public class SdmsApplication extends SpringBootServletInitializer {
 	
 	@RequestMapping(value = "/index")
 	public String index() {
-		return "/html/index";
+		return "/index";
 	}
 	
 	public static void main(String[] args) {
